@@ -4,7 +4,7 @@ class RecipeList extends React.Component{
   render(){
     return(
       <div>
-        <h2>Recipe List</h2>
+        <h2>List of recipies</h2>
       </div>
     );
   }
