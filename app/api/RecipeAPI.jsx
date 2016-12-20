@@ -1,7 +1,7 @@
 module.exports = {
-  setRecipes: function(recipes){
-    localStorage.setItem('_recipes',recipes);
-    return recipes;
+  setRecipes: function(recipe){
+    localStorage.setItem('_recipes',recipe);
+    return recipe;
   },
   getRecipes: function(){
     var stringRecipes = localStorage.getItem('_recipes');

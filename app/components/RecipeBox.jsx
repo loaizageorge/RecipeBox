@@ -10,13 +10,12 @@ class RecipeBox extends React.Component{
     this.state = {
       recipes: RecipeAPI.getRecipes()
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  submit(){
-    console.log('submit');
-    this.state = {
+  handleSubmit(){
+    this.setState({
       recipes: RecipeAPI.getRecipes()
-    };
-    console.log(this.state.recipes);
+    });
   }
   render(){
     console.log('render');
@@ -26,7 +25,7 @@ class RecipeBox extends React.Component{
         <h1>{recipes}</h1>
         <RecipeList/>
         <Recipe/>
-        <AddRecipe  submit = {this.submit.bind(this)}/>
+        <AddRecipe  onSubmit = {this.handleSubmit}/>
       </div>
     );
   }
