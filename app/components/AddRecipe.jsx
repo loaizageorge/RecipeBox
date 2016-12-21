@@ -8,10 +8,11 @@ class AddRecipe extends React.Component{
   }
   handleSubmit (e) {
     e.preventDefault();
-    var recipe = this.refs.recipe.value;
+    var recipe = {
+      'name' : this.refs.recipe.value
+    };
     this.refs.recipe.value = '';
-    RecipeAPI.setRecipes(recipe);
-    this.props.onSubmit();
+    this.props.onSubmit(recipe);
   }
   render(){
     return(

@@ -12,18 +12,34 @@ class RecipeBox extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleSubmit(){
+  handleSubmit(recipe){
+    if(this.state.recipes === '[]'){
+      this.setState({
+        recipes: [
+          {
+            name: recipe.name
+          }
+        ]
+      });
+    } else {
     this.setState({
-      recipes: RecipeAPI.getRecipes()
+      recipes: [
+        ...this.state.recipes,
+        {name: recipe.name}
+      ]
     });
+    }
+  }
+  componentDidUpdate(prevProps, prevState){
+    RecipeAPI.setRecipes(this.state.recipes);
   }
   render(){
-    console.log('render');
     var recipes = this.state.recipes;
+    console.log(recipes);
     return(
       <div>
-        <h1>{recipes}</h1>
-        <RecipeList/>
+        <h1>RecipeBox</h1>
+        <RecipeList recipes = {recipes}/>
         <Recipe/>
         <AddRecipe  onSubmit = {this.handleSubmit}/>
       </div>
