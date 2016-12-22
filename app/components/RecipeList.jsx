@@ -1,4 +1,5 @@
 import React from 'react';
+import Recipe from 'Recipe';
 
 class RecipeList extends React.Component{
   constructor(props){
@@ -11,14 +12,17 @@ class RecipeList extends React.Component{
     if(recipes.length === 0){
       return(
         <h2>Add your favorite recipe below!</h2>
-      );
+      )
     } else {
-      return (
-      <h2>{recipes[0].name}</h2>
-      );
-    }
-
-
+      console.log(recipes);
+      var recipeID = 0;
+      return recipes.map((recipe) =>{
+        recipeID++;
+        return (
+          <Recipe key = {recipeID} {...recipe} />
+        )
+      });
+    };
   }
   render(){
     var recipes = this.props.recipes;

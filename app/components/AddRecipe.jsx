@@ -9,9 +9,11 @@ class AddRecipe extends React.Component{
   handleSubmit (e) {
     e.preventDefault();
     var recipe = {
-      'name' : this.refs.recipe.value
+      'name' : this.refs.name.value,
+      'ingredient': this.refs.ingredient.value.split(',')
     };
-    this.refs.recipe.value = '';
+    this.refs.name.value = '';
+    this.refs.ingredient.value = '';
     this.props.onSubmit(recipe);
   }
   render(){
@@ -19,7 +21,10 @@ class AddRecipe extends React.Component{
       <div>
         <form onSubmit = {this.handleSubmit} >
           <div>
-            Recipe<input type = "text" ref = "recipe" placeholder = "eg. Apple Pie"/>
+            Recipe<input type = "text" ref = "name" placeholder = "eg. Apple Pie"/>
+          </div>
+          <div>
+            Ingredients<input type = "text" ref = "ingredient" placeholder ="Enter ingredients seperated by a comma eg. eggs,milk,flour"/>
           </div>
           {/*<div>
             Image URL<input type = "text" name = "img" placeholder = "eg. www.google.com/applepiepics"/>

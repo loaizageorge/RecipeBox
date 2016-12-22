@@ -17,7 +17,8 @@ class RecipeBox extends React.Component{
       this.setState({
         recipes: [
           {
-            name: recipe.name
+            name: recipe.name,
+            ingredient: recipe.ingredient
           }
         ]
       });
@@ -25,7 +26,10 @@ class RecipeBox extends React.Component{
     this.setState({
       recipes: [
         ...this.state.recipes,
-        {name: recipe.name}
+        {
+          name: recipe.name,
+          ingredient: recipe.ingredient
+        }
       ]
     });
     }
@@ -40,7 +44,6 @@ class RecipeBox extends React.Component{
       <div>
         <h1>RecipeBox</h1>
         <RecipeList recipes = {recipes}/>
-        <Recipe/>
         <AddRecipe  onSubmit = {this.handleSubmit}/>
       </div>
     );
