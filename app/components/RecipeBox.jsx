@@ -39,9 +39,8 @@ class RecipeBox extends React.Component{
   }
   render(){
     var recipes = this.state.recipes;
-    console.log(recipes);
     return(
-      <div>
+      <div className = "container">
         <h1>RecipeBox</h1>
         <RecipeList recipes = {recipes}/>
         <AddRecipe  onSubmit = {this.handleSubmit}/>

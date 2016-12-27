@@ -14,12 +14,11 @@ class RecipeList extends React.Component{
         <h2>Add your favorite recipe below!</h2>
       )
     } else {
-      console.log(recipes);
       var recipeID = 0;
       return recipes.map((recipe) =>{
         recipeID++;
         return (
-          <Recipe key = {recipeID} {...recipe} />
+          <Recipe key = {recipeID} {...recipe} ID = {recipeID} />
         )
       });
     };
