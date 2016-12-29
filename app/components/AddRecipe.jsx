@@ -6,22 +6,16 @@ class AddRecipe extends React.Component{
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.openModal = this.openModal.bind(this);
   }
-  handleSubmit (e) {
-    e.preventDefault();
+  handleSubmit(recipe) {
+  { /*  e.preventDefault();
     var recipe = {
       'name' : this.refs.name.value,
       'ingredient': this.refs.ingredient.value.split(',')
     };
     this.refs.name.value = '';
-    this.refs.ingredient.value = '';
+    this.refs.ingredient.value = ''; */}
     this.props.onSubmit(recipe);
-  }
-  openModal(){
-    return(
-      <Modal/>
-    );
   }
   render(){
     return(
@@ -45,7 +39,7 @@ class AddRecipe extends React.Component{
               <input className = "btn btn-primary" type = "submit" value = "Add Recipe"/>
               </div>
             </form>*/}
-            <MyModal/>
+            <MyModal submitModal = {this.handleSubmit}/>
       </div>
     );
   }

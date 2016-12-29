@@ -22,7 +22,6 @@ class Recipe extends React.Component{
     var {name,ingredient} = this.props;
     var ID = this.props.ID;
 
-
     return(
       <div className = "col-md-4" >
         <div className = "recipe">
