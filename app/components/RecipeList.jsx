@@ -11,7 +11,9 @@ class RecipeList extends React.Component{
 
     if(recipes.length === 0){
       return(
+        <div className = "row center" >
         <h2>Add your favorite recipe below!</h2>
+        </div>
       )
     } else {
       var recipeID = 0;
@@ -26,9 +28,9 @@ class RecipeList extends React.Component{
   render(){
     var recipes = this.props.recipes;
     return(
-      <div>
-        {this.displayRecipes()}
-      </div>
+        <div className = "row">
+          {this.displayRecipes()}
+        </div>
     );
   }
 }
