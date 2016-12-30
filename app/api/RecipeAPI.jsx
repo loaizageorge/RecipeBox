@@ -30,6 +30,10 @@ module.exports = {
     var recipes = this.getRecipes();
     recipes.splice(id-1,1);
     this.setRecipes(recipes);
-
+  },
+  editRecipe: function(id,editedRecipe){
+    var recipes = this.getRecipes();
+    recipes[id-1] = editedRecipe;
+    this.setRecipes(recipes);
   }
 }

@@ -6,11 +6,12 @@ class RecipeList extends React.Component{
   constructor(props){
     super(props);
     this.displayRecipes = this.displayRecipes.bind(this);
-    this.delete = this.delete.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
-  delete(){
-    this.props.onDelete();
+  updateState(){
+    this.props.update();
   }
+
   displayRecipes(){
     var recipes = this.props.recipes;
     if(recipes.length === 0){
@@ -24,7 +25,7 @@ class RecipeList extends React.Component{
       return recipes.map((recipe) =>{
         recipeID++;
         return (
-          <Recipe delete = {this.delete} key = {recipeID} {...recipe} ID = {recipeID} />
+          <Recipe updateState = {this.updateState} key = {recipeID} {...recipe} ID = {recipeID} />
         )
       });
     };

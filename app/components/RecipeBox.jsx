@@ -11,7 +11,7 @@ class RecipeBox extends React.Component{
       recipes: RecipeAPI.getRecipes()
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   handleSubmit(recipe){
     if(this.state.recipes === '[]'){
@@ -35,11 +35,12 @@ class RecipeBox extends React.Component{
     });
     }
   }
-  handleDelete(){
+  handleChange(){
     this.setState({
       recipes: RecipeAPI.getRecipes()
     });
   }
+
   componentDidUpdate(prevProps, prevState){
     RecipeAPI.setRecipes(this.state.recipes);
   }
@@ -48,7 +49,7 @@ class RecipeBox extends React.Component{
     return(
       <div className = "container">
         <h1>RecipeBox</h1>
-        <RecipeList onDelete = {this.handleDelete}  recipes = {recipes}/>
+        <RecipeList update = {this.handleChange} recipes = {recipes}/>
         <AddRecipe onSubmit = {this.handleSubmit}/>
       </div>
     );
