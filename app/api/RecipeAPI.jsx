@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import React from 'react';
 
 module.exports = {
   setRecipes: function(recipes){
@@ -24,5 +25,11 @@ module.exports = {
     } else {
       return [];
     }
+  },
+  deleteRecipe: function(id){
+    var recipes = this.getRecipes();
+    recipes.splice(id-1,1);
+    this.setRecipes(recipes);
+
   }
 }

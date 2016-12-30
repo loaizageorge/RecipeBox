@@ -1,14 +1,18 @@
 import React from 'react';
 import Recipe from 'Recipe';
+import RecipeAPI from 'RecipeAPI';
 
 class RecipeList extends React.Component{
   constructor(props){
     super(props);
     this.displayRecipes = this.displayRecipes.bind(this);
+    this.delete = this.delete.bind(this);
+  }
+  delete(){
+    this.props.onDelete();
   }
   displayRecipes(){
     var recipes = this.props.recipes;
-
     if(recipes.length === 0){
       return(
         <div className = "row center" >
@@ -20,7 +24,7 @@ class RecipeList extends React.Component{
       return recipes.map((recipe) =>{
         recipeID++;
         return (
-          <Recipe key = {recipeID} {...recipe} ID = {recipeID} />
+          <Recipe delete = {this.delete} key = {recipeID} {...recipe} ID = {recipeID} />
         )
       });
     };
