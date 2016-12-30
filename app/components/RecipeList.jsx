@@ -33,7 +33,7 @@ class RecipeList extends React.Component{
   render(){
     var recipes = this.props.recipes;
     return(
-        <div className = "row">
+        <div className = "row recipes">
           {this.displayRecipes()}
         </div>
     );

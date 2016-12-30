@@ -70,7 +70,7 @@ class Recipe extends React.Component{
           </div>
         <div className = "recipe-header">
           <h3  className = "recipe-name">{name}</h3>
-          <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i className="fa fa-chevron-down" aria-hidden="true"></i>Expand</button>
+          <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i className="fa fa-chevron-down fa-lg" aria-hidden="true"></i></button>
         </div>
          <div id = {ID} className = "recipe-ingredients">
            <h4>Ingredients</h4>

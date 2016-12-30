@@ -41,7 +41,7 @@ class AddRecipe extends React.Component{
             <Modal.Header closeButton>
               <Modal.Title>Add recipe</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body >
               <form className = "add-form">
                 <div className = "form-group">
                   <label className = "sr-only" for = "form-name">Recipe</label>
@@ -57,7 +57,7 @@ class AddRecipe extends React.Component{
                 </div>
               </form>
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer className = "modal-footer">
               <button onClick={this.close}>Close</button>
               <button onClick={this.handleSubmit}>Submit</button>
             </Modal.Footer>

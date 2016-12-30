@@ -3,8 +3,15 @@ $recipe-ingredients-color: #dd0000;
 $background: rgb(246, 246, 225);
 
 body{
-  background-color: $background;
+  background-image: url('http://www.photos-public-domain.com/wp-content/uploads/2012/03/bamboo-cutting-board-texture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
+}
+
+h1{
+  color: white;
+  font-weight: bold;
 }
 
 .recipe{
@@ -23,9 +30,21 @@ body{
 
 .recipe-name{
   display: inline;
-  padding: 1rem;
+
 }
 
-.btn-info{
+.recipe-image{
+  border: 1px solid black;
 
+}
+
+.recipe-header{
+  margin-top: 1rem;
+  position: relative;;
+
+  button{
+    position: absolute;
+    right: 0;
+    top: -.5rem;
+  }
 }
