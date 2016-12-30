@@ -19,6 +19,7 @@ class RecipeBox extends React.Component{
         recipes: [
           {
             name: recipe.name,
+            url: recipe.url,
             ingredient: recipe.ingredient
           }
         ]
@@ -29,6 +30,7 @@ class RecipeBox extends React.Component{
         ...this.state.recipes,
         {
           name: recipe.name,
+          url: recipe.url,
           ingredient: recipe.ingredient
         }
       ]

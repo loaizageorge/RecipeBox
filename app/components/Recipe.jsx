@@ -49,6 +49,7 @@ class Recipe extends React.Component{
     e.preventDefault();
     var recipe = {
       'name' : this.refs.name.value,
+      'url' : this.refs.url.value,
       'ingredient': this.refs.ingredient.value.split(',')
     };
     var index = this.props.ID;
@@ -58,15 +59,19 @@ class Recipe extends React.Component{
 
   }
   render(){
-    var {name,ingredient} = this.props;
+    var {name,url,ingredient} = this.props;
     var ID = this.props.ID;
 
     return(
-      <div className = "col-md-4" >
+      <div className = "col-xs-12 col-sm-6 col-lg-4" >
         <div className = "recipe">
-          <img className = "img-responsive" src = "http://130.211.52.161/tradeo-content/themes/nucleare-pro/images/no-image-box.png"/>
-         <h3  className = "recipe-name">{name}</h3>
-         <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i className="fa fa-chevron-down" aria-hidden="true"></i>Expand</button>
+          <div className = "recipe-image">
+            <img className = "img-responsive" src = {url}/>
+          </div>
+        <div className = "recipe-header">
+          <h3  className = "recipe-name">{name}</h3>
+          <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i className="fa fa-chevron-down" aria-hidden="true"></i>Expand</button>
+        </div>
          <div id = {ID} className = "recipe-ingredients">
            <h4>Ingredients</h4>
            <ul>{this.renderIngredients(ingredient)}</ul>
@@ -82,6 +87,10 @@ class Recipe extends React.Component{
                        <div className = "form-group">
                          <label className = "sr-only" for = "form-name">Recipe</label>
                          <input id = "form-name" className = "add-recipe-input"  type = "text" ref = "name" defaultValue = {name} placeholder = "Recipe name: e.g. Apple Pie"/>
+                       </div>
+                       <div className = "form-group">
+                         <label className = "sr-only" for = "form-name">URL of image</label>
+                         <input id = "form-url" className = "add-recipe-input"  type = "text" ref = "url" defaultValue = {url} placeholder = "URL of image: e.g. www.somewebsite/someimage.png"/>
                        </div>
                        <div className = "form-group">
                          <label className = "sr-only" for = "form-ingredients">Ingredients</label>

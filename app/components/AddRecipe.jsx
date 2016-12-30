@@ -23,9 +23,11 @@ class AddRecipe extends React.Component{
     e.preventDefault();
     var recipe = {
       'name' : this.refs.name.value,
+      'url' : this.refs.url.value,
       'ingredient': this.refs.ingredient.value.split(',')
     };
     this.refs.name.value = '';
+    this.refs.url.value = '';
     this.refs.ingredient.value = '';
     this.props.onSubmit(recipe);
     this.setState({showModal:false});
@@ -44,6 +46,10 @@ class AddRecipe extends React.Component{
                 <div className = "form-group">
                   <label className = "sr-only" for = "form-name">Recipe</label>
                   <input id = "form-name" className = "add-recipe-input"  type = "text" ref = "name" placeholder = "Recipe name: e.g. Apple Pie"/>
+                </div>
+                <div className = "form-group">
+                  <label className = "sr-only" for = "form-name">URL of image</label>
+                  <input id = "form-url" className = "add-recipe-input"  type = "text" ref = "url" placeholder = "URL of image: e.g. www.somewebsite/someimage.png"/>
                 </div>
                 <div className = "form-group">
                   <label className = "sr-only" for = "form-ingredients">Ingredients</label>
