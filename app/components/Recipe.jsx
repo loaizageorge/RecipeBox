@@ -76,7 +76,7 @@ class Recipe extends React.Component{
            <h4>Ingredients</h4>
            <ul>{this.renderIngredients(ingredient)}</ul>
              <div className = "buttons">
-               <button type = "button" className = "btn-primary" onClick = {this.open}><i className ="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button>
+               <button type = "button" className = "btn-primary" onClick = {this.open}><i className ="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                  {/* Edit Modal */}
                  <Modal show={this.state.showModal} onHide={this.close}>
                    <Modal.Header closeButton>
@@ -84,17 +84,18 @@ class Recipe extends React.Component{
                    </Modal.Header>
                    <Modal.Body>
                      <form className = "add-form">
+                     <small>Items with an asterisk(*) are required</small>
                        <div className = "form-group">
                          <label className = "sr-only" for = "form-name">Recipe</label>
-                         <input id = "form-name" className = "add-recipe-input"  type = "text" ref = "name" defaultValue = {name} placeholder = "Recipe name: e.g. Apple Pie"/>
+                         Recipe*<input id = "form-name" className = "add-recipe-input"  type = "text" ref = "name" defaultValue = {name} placeholder = "Recipe name: e.g. Apple Pie"/>
                        </div>
                        <div className = "form-group">
                          <label className = "sr-only" for = "form-name">URL of image</label>
-                         <input id = "form-url" className = "add-recipe-input"  type = "text" ref = "url" defaultValue = {url} placeholder = "URL of image: e.g. www.somewebsite/someimage.png"/>
+                         URL <input id = "form-url" className = "add-recipe-input"  type = "text" ref = "url" defaultValue = {url} placeholder = "URL of image: e.g. www.somewebsite/someimage.png"/>
                        </div>
                        <div className = "form-group">
                          <label className = "sr-only" for = "form-ingredients">Ingredients</label>
-                           <textarea id = "form-ingredients" className = "add-recipe-input" rows = "5" ref = "ingredient" defaultValue = {ingredient} placeholder ="Ingredients seperated by a comma: e.g. eggs,milk,flour"/>
+                          Ingredients * <input id = "form-ingredients" className = "add-recipe-input"  ref = "ingredient" defaultValue = {ingredient} placeholder ="Ingredients seperated by a comma: e.g. eggs,milk,flour"/>
                        </div>
                      </form>
                    </Modal.Body>
@@ -104,7 +105,7 @@ class Recipe extends React.Component{
                    </Modal.Footer>
                  </Modal>
                 {/* ==== End Modal ================ */}
-               <button onClick = {() => {this.handleDelete(ID)} } className = "btn-danger"><i className ="fa fa-trash" aria-hidden="true"></i>Delete</button>
+               <button onClick = {() => {this.handleDelete(ID)} } className = "btn-danger"><i className ="fa fa-trash" aria-hidden="true"></i> Delete</button>
              </div>
          </div>
 
