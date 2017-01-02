@@ -38,8 +38,16 @@ class Recipe extends React.Component{
     }
   }
   handleToggle(ID){
-    var selector = "#" + ID;
+    var selector = '#' + ID;
+    var iconID = '#chevron' + ID;
     $(selector).toggle();
+
+    if( $(iconID).hasClass('fa-chevron-down')){
+      $(iconID).removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    } else{
+      $(iconID).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    }
+
   }
   handleDelete(ID){
     RecipeAPI.deleteRecipe(ID);
@@ -61,16 +69,17 @@ class Recipe extends React.Component{
   render(){
     var {name,url,ingredient} = this.props;
     var ID = this.props.ID;
+    var iconID = 'chevron' + ID;
 
     return(
       <div className = "col-xs-12 col-sm-6 col-lg-4" >
         <div className = "recipe">
           <div className = "recipe-image">
-            <img className = "img-responsive" src = {url}/>
+            <img className = "img-thumbnail" src = {url}/>
           </div>
         <div className = "recipe-header">
           <h3  className = "recipe-name">{name}</h3>
-          <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i className="fa fa-chevron-down fa-lg" aria-hidden="true"></i></button>
+          <button onClick = { () => {this.handleToggle(ID)} } className = "btn btn-info recipe-expand"> <i id = {iconID} className="fa fa-chevron-down fa-lg" aria-hidden="true"></i></button>
         </div>
          <div id = {ID} className = "recipe-ingredients">
            <h4>Ingredients</h4>
