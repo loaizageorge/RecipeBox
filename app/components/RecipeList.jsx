@@ -17,7 +17,7 @@ class RecipeList extends React.Component{
     if(recipes.length === 0){
       return(
         <div className = "row center" >
-        <h2>Add your favorite recipe below!</h2>
+        <h2>Nothing to show... <br></br> Add a recipe to get started!</h2>
         </div>
       )
     } else {

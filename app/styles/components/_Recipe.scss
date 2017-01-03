@@ -1,8 +1,4 @@
 $recipe-color: #82ff91;
-$recipe-ingredients-color: #dd0000;
-$background: rgb(246, 246, 225);
-
-
 
 .recipe{
   margin-bottom: 1rem;
@@ -16,24 +12,26 @@ $background: rgb(246, 246, 225);
 
 .recipe-ingredients{
   display: none;
+  list-style-position: inside;
 }
 
 .recipe-name{
   display: inline;
-
 }
 
-.recipe-image{
-
-}
 
 .recipe-header{
   margin-top: 1rem;
   position: relative;;
-
   button{
     position: absolute;
     right: 0;
     top: -.5rem;
   }
+}
+
+.recipe-ingredients button{
+  margin: .5rem;
+  padding: 2px;
+  vertical-align: middle;
 }

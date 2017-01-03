@@ -50,7 +50,7 @@ class RecipeBox extends React.Component{
     var recipes = this.state.recipes;
     return(
       <div className = "container">
-        <h1>RecipeBox</h1>
+        <h1>RecipeBox <i className="icon fa fa-shopping-basket" aria-hidden="true"></i> </h1>
         <RecipeList update = {this.handleChange} recipes = {recipes}/>
         <AddRecipe onSubmit = {this.handleSubmit}/>
       </div>

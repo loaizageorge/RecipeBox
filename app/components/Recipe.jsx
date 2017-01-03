@@ -84,7 +84,6 @@ class Recipe extends React.Component{
          <div id = {ID} className = "recipe-ingredients">
            <h4>Ingredients</h4>
            <ul>{this.renderIngredients(ingredient)}</ul>
-             <div className = "buttons">
                <button type = "button" className = "btn-primary" onClick = {this.open}><i className ="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                  {/* Edit Modal */}
                  <Modal show={this.state.showModal} onHide={this.close}>
@@ -109,13 +108,12 @@ class Recipe extends React.Component{
                      </form>
                    </Modal.Body>
                    <Modal.Footer>
-                     <button onClick={this.close}>Close</button>
-                     <button onClick={this.handleEdit}>Commit changes</button>
+                       <button type = "button" className = "btn btn-danger" onClick={this.close}>Close</button>
+                       <button type = "button" className = "btn btn-primary"onClick={this.handleEdit}>Commit changes</button>
                    </Modal.Footer>
                  </Modal>
                 {/* ==== End Modal ================ */}
                <button onClick = {() => {this.handleDelete(ID)} } className = "btn-danger"><i className ="fa fa-trash" aria-hidden="true"></i> Delete</button>
-             </div>
          </div>
 
         </div>

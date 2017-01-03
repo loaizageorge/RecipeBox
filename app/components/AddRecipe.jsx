@@ -40,7 +40,9 @@ class AddRecipe extends React.Component{
     return(
       <div>
         <div>
-          <button type = "button" className = "btn btn-primary" onClick = {this.open}> Add recipe </button>
+          <div className = "add-btn">
+            <button type = "button" className = "btn btn-primary" onClick = {this.open}> Add recipe </button>
+          </div>
           <Modal show={this.state.showModal} onHide={this.close}>
             <Modal.Header closeButton>
               <Modal.Title>Add recipe</Modal.Title>
@@ -62,9 +64,9 @@ class AddRecipe extends React.Component{
                 </div>
               </form>
             </Modal.Body>
-            <Modal.Footer className = "modal-footer">
-              <button onClick={this.close}>Close</button>
-              <button onClick={this.handleSubmit}>Submit</button>
+            <Modal.Footer>
+              <button className = "btn btn-danger" onClick={this.close}>Close</button>
+              <button className = "btn btn-primary" onClick={this.handleSubmit}>Submit</button>
             </Modal.Footer>
           </Modal>
         </div>
